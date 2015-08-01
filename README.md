@@ -1,6 +1,6 @@
 # LearnLuaSourceCode
 
-深入浅出学习 Lua 系列教材的源码文件。
+深入浅出学习 Lua 系列视频教程的源码文件。
 
 视频教程首发[极客学院](https://jikexueyuan.com)
 
