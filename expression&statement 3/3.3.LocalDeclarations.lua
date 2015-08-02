@@ -19,5 +19,3 @@ else
 	print(m)
 end
 print(m)
-
-print("----------Test-3-----------")

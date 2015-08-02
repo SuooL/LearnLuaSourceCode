@@ -25,15 +25,12 @@ print(nil or false)  --> false
 
 -- and 和 or 都遵循短路规则；即是第二个操作数只在需要的时候去求值。
 print("---short-circuit evaluation---")
-a = 3
-b = 4
- print(a)
 
 --[[
 x = x or y
 等价于,在对 x 的值没有设置的时候设置一个默认值
 if not x then
-	x = v
+	x = y
 end
 ]]
 

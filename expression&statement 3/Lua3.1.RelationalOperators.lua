@@ -47,8 +47,12 @@ print("--------Order Operators Test---------")
 print(1 > 2) 
 print(2 <= 2)      -- 数字比较
 print("1" < "2") 
-print("1111" < "222")  
+print("1111" < "222")
+print(string.byte("1111"))
+print(string.byte("222"))  
 print("1" < "a")  -- 字符串的比较
+print(string.byte("1"))
+print(string.byte("a"))  
 --print("1" < 2)    -- 不能将字符串和数字进行大小的比较 
 
 

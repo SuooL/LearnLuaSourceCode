@@ -14,8 +14,8 @@
 如果两个操作数都是整数,该操作以整数方式操作且结果也将是一个整数。 
 否则，当两个操作数都是数字或可以被转换为数字的字符串时，操作数会被转换成两个浮点数，结果也是一个浮点数。
 ]]
-
-print("Addition : 1+1 = " .. 1+ 1)
+print("---------Test 1--------------")
+print("Addition : 1+1 = " .. 1 + 1)
 
 print("Addition : 1+1 = " .. '1'+ 1)
 print("Addition : 1+1 = " .. 1.0+ 1)
@@ -25,6 +25,7 @@ print("subtraction : 2-1 = " .. 2 - 1)
 print("multiplication : 2*3  = " .. 2*3)
 
 -- 乘方(^)和浮点除法(/) 总是把操作数转换成浮点数进行，其结果总是浮点数。
+print("---------Test 2--------------")
 print("float division : 6 /3 = " .. 6/3)
 
 print("exponentiation : 2^3 = " .. 2^3)
@@ -32,6 +33,7 @@ print("exponentiation : 2^3 = " .. 2^3)
 print("exponentiation : 4^0.5 = " .. 4^0.5) -- 乘方使用 ISO C 函数 pow， 因此它也可以接受非整数的指数。
 
 -- 取模被定义成除法的余数
+print("---------Test 3--------------")
 print("modulo : 5%2 = " .. 5%2)  
 print("modulo : 5%2 = " .. 5%-2)   -- 整数的取模结果的符号和第二个参数相同
 
@@ -39,5 +41,6 @@ print("modulo : 5%2 = " .. 5.3%1)       -- 浮点数也可以进行取模运算�
 print("modulo : 5%2 = " .. 5.3- 5.3%1)  -- 浮点数也可以进行取模运算，x-x%1 是取浮点数的整数部分
 
 --向下取整的除法 （//） 指做一次除法，并将商圆整到靠近负无穷的一侧，即对操作数做除法后向下取整（floor函数） 。
+print("---------Test 4--------------")
 print("floor division: 3//2 = " .. 3//2)
 print("floor division: math.floor(3/2) = " .. math.floor(3/2))
