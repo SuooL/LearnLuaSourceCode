@@ -5,6 +5,6 @@
 local l = 4
 repeat
 	l = (l + 1)
-	local u = l ^2
+	local u = l ^ 2
 	print(u)
 until u > 100

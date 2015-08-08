@@ -5,12 +5,12 @@ for i = 1, #a do
   print(a[i])
 end
 
-print("-----------for Test 1-------------")
-for i = #a, 1, -1 do
+print("-----------for Test 2-------------")
+for i = #a, 1, -2 do
   print(a[i])
 end
 
-print("-----------for Test 1-------------")
+print("-----------for Test 3-------------")
 local pos = nil
 for i = 1, #a do
 	if a[i] > 9 then

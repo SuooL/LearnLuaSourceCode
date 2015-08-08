@@ -9,6 +9,7 @@ for i = 1, #a do
 		break
 	end
 end
+
 print(pos)
 
 -- return 用于从函数中返回结果或者结束一个函数。
@@ -27,6 +28,7 @@ function index(a, v)
 end
 
 print("Pos is: " .. index(a, 2))
+
 print("-----------return Test 2-----------")
 -- 如果想在块的中间使用return，你需要借助于 do 块：
 
@@ -55,7 +57,7 @@ redo、
 local a, b = 1, 5
 while a < 6 do
   ::redo::
-  if a <= b then
+  if a <= 10 then
   	print(a)
   	a = a + 1
     goto redo
