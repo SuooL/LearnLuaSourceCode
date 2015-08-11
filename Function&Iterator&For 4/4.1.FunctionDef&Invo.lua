@@ -1,4 +1,4 @@
-#! /usr/local/bin/lutableTest
+#! /usr/local/bin/lua
 
 function sumAdd(n)
 	local sum = 0
@@ -8,7 +8,7 @@ function sumAdd(n)
 	return sum
 end
 
-print("Enter tableTest number: ")
+print("Enter a number: ")
 num = io.read("*number")  -- io.read的选项名不再用'*'打头。但出于兼容性考虑，会继续忽略掉这个字符。
 print(sumAdd(num))
 
@@ -20,6 +20,6 @@ fact = function (n)
 	end
 end
 
-print("Enter tableTest number: ")
+print("Enter factorial number: ")
 num = io.read("*number")  -- io.read的选项名不再用'*'打头。但出于兼容性考虑，会继续忽略掉这个字符。
 print(fact(num))
