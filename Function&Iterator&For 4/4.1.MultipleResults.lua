@@ -11,6 +11,7 @@ function functThree()
 	return "resultFir", "resultSec" 
 end   
 
+-- Lua 会调整一个函数的返回值数量以适应不同的调用情况
 -- 作为语句调用时，返回的结果全部被忽略
 print("---------------Test First-----------------")
 functThree()
@@ -19,7 +20,7 @@ functThree()
 print("---------------Test Second-----------------")
 print("it is: " .. functThree())    -- "it is: resultFir"
 
--- 只有当一个函数式一系列表达式中的 最后一个 OR 仅有的一个的时候，才能获得其所有的返回值
+-- 只有当一个函数调用是一系列表达式中的 最后一个 OR 仅有的一个的时候，才能获得其所有的返回值
 -- 多重赋值、函数调用的传入的实参列表、表构造 和 return 语句
 
 print("---------------Test Third-----------------")
@@ -85,6 +86,7 @@ print(returnMulti(3))
 
 print("--------------Test Unpack----------------")
 -- 借助 table.unpack 可以实现：以任何序列（即不存在 nil 的表）作为参数，动态调用任何函数。
+-- table.unpack 接受一个数组作为参数，从下标1开始返回该数组的所有元素
 local f = string.find
 local a = {"hello", "ll"}
 print(f(table.unpack(a)))          -- 等价于：string.find("hello", "ll")

@@ -20,7 +20,7 @@ local function func3( ... )
 end
 
 local func3
-foo = function ( ... )
+func3 = function ( ... )
 	-- body
 end
 

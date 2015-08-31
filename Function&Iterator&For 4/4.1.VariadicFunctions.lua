@@ -23,6 +23,9 @@ function show2(...)
   print(x, y, z)
 end
 
+show1(1,2,3)
+show1(1,2,3)
+
 print("-------------Variable TestThir-----------")
 -- 可变参数函数也可以有任意个数的固定参数，但固定参数必须出现在可变参数之前：
 
@@ -32,7 +35,7 @@ end
 
 -- fwrite()                -- fmt=nil, 没有额外参数（会报错，因为 string.format 需要一个字符串参数）
 fwrite("a\n")              -- fmt="a", 没有额外参数
-fwrite("%d %d\n", 4, 5)    -- fmt="%d%d", 额外参数：4, 5
+fwrite("%d %d\n", 4, 5)    -- fmt="%d %d", 额外参数：4, 5
 
 print("-------------Variable TestFor-----------")
 --[[
@@ -88,13 +91,3 @@ print(select_nils(0, 1))
 print(select_nils(1, nil, 3))
 
 -- 如果可变参数中不可能有 nil 值，则建议使用 {...}（而不是 table.pack(...)），因为它更简洁、速度更快。
-
-
-
-
-
-
-
-
-
-
