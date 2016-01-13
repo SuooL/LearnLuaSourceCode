@@ -8,4 +8,6 @@
 
 [第二课：Lua 的基本值与类型](http://www.jikexueyuan.com/course/1803.html?hmsr=teacher_suool_c1803)
 
+[第三课：Lua的表达式和语句](http://www.jikexueyuan.com/course/1902.html?hmsr=teacher_suool_c1902))
+
 目前教程正在连载发布中，敬请期待~

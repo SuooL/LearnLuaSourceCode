@@ -3,24 +3,27 @@
 -- 这种迭代器在老版本的 Lua 中很常用。
 -- 结论是：推荐使用 “生成器” 风格的迭代器。
 
-function allwords( f )
-	for line in io.lines() do
-		for word in string.gmatch(line, "%w+") do
-			f(word)
-		end
-	end
+function allwords (f)
+    -- repeat for each line in the file
+    for l in io.lines() do
+    	-- repeat for each word in the line
+    	for w in string.gfind(l, "%w+") do
+        	-- call the function
+            if f then
+           		f(w)
+       		end
+       	end
+    end
 end
 
-allwords(print)
+--allwords(print)
 
-local count = 0
-allwords(function (w)
-	if w == "hello" then count = count + 1 end
-	end)
+-- local count = 0
+-- allwords(function (w)
+--     if w == "hello" then count = count + 1 end
+-- end)
 
-print(count)
-
-
+--print(count)
 -----------------------
 local count = 0
 for w in allwords() do
