@@ -53,16 +53,17 @@ print(functThree(), "Lua")       -- 输出：resultFir    Lua
 
 print("---------------Test  3-3 -----------------")
 -- [[ 表构造 ]]
-
+-- 此处的unpack函数在5.2后将其移到了table库中，unpack函数只能在5.1和某些5.2的版本中直接使用，最好的办法是使用下面的声明
 -- 唯一的表达式（OK）
+local unpack = unpack or table.unpack
 result = {functThree()}              -- result={"resultFir", "resultSec"}
-print(table.unpack(result))
+print(unpack(result))
 -- 最后一个的表达式（OK）
 result = {"Lua", functThree()}        -- result={"Lua", "resultFir", "resultSec"}
-print(table.unpack(result))
+print(unpack(result))
 -- 不满足规定
 result = {functThree(), "Lua"}        -- result={"resultFir", "Lua"}
-print(table.unpack(result))
+print(unpack(result))
 
 print("---------------Test  3-4 -----------------")
 -- [[ return 语句 ]]
@@ -87,6 +88,15 @@ print(returnMulti(3))
 print("--------------Test Unpack----------------")
 -- 借助 table.unpack 可以实现：以任何序列（即不存在 nil 的表）作为参数，动态调用任何函数。
 -- table.unpack 接受一个数组作为参数，从下标1开始返回该数组的所有元素
+
+-- 默认的unpack是 ANSI C 实现的，下面可以使用Lua来实现
+function unpack(t, i)
+    i = i or 1
+    if t[i] then
+       return t[i], unpack(t, i + 1)
+    end
+end
+
 local f = string.find
-local a = {"hello", "ll"}
-print(f(table.unpack(a)))          -- 等价于：string.find("hello", "ll")
+local a = {"jikexueyuan", "ke"}
+print(f(unpack(a)))          -- 等价于：string.find("jikexueyuan", "ke")

@@ -2,12 +2,16 @@
 
 print("-------------Variable TestFir-----------")
 -- 将参数作为结果直接返回
-function identity(...)
-  return ...
-end
+local printResult = ""
+ 
+-- function print(...)
+--     for i,v in ipairs(arg) do
+--        printResult = printResult .. tostring(v) .. "\t"
+--     end
+--     printResult = printResult .. "\n"
+-- end
 
-print(identity("a", "b", "c"))    -- "a", "b", "c"
-
+print("Hello Lua.")
 -- 参数列表中的三个点 (...) 表明函数是可变参数的（variadic）。
 -- 在函数内部，可以通过表达式 ... 来获取实际传递给函数的参数，
 -- 表达式 ... 被称为可变参数表达式，它的行为与“返回多个结果的函数”类似。
@@ -27,11 +31,13 @@ show1(1,2,3)
 show1(1,2,3)
 
 print("-------------Variable TestThir-----------")
--- 可变参数函数也可以有任意个数的固定参数，但固定参数必须出现在可变参数之前：
-
+-- 可变参数函数也可以有任意个数的固定参数，但固定参数必须出现在可变参数之前
+-- 有时候需要将函数的可变参数传递给另外的函数调用，可以使用前面我们说过的unpack(arg)返回arg表所有的可变参数，
+-- Lua提供了一个文本格式化的函数string.format（类似C语言的sprintf函数）：
 function fwrite(fmt, ...)
-  return io.write(string.format(fmt, ...))
+    return io.write(string.format(fmt, unpack(arg)))
 end
+-- 这个例子将文本格式化操作和写操作组合为一个函数。
 
 -- fwrite()                -- fmt=nil, 没有额外参数（会报错，因为 string.format 需要一个字符串参数）
 fwrite("a\n")              -- fmt="a", 没有额外参数
@@ -58,8 +64,12 @@ print(sum(1))          -- 1
 print(sum(1, 2, 3))    -- 6
 
 -- 可变参数中存在 nil
+function pack(...)
+  return { n = select("#", ...), ... }
+end
+local pack = pack or table.pack
 function has_nils(...)
-  local arg = table.pack(...)
+  local arg = pack(...)
   for i = 1, arg.n do
     if arg[i] == nil then
       return true
