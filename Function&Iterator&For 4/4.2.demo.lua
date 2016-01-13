@@ -24,7 +24,7 @@ func3 = function ( ... )
 	-- body
 end
 
-local  function fact(n)
+local function fact(n)
 	if n == 0 then return 1
 		else return n*fact(n-1)
 	end
